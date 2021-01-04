@@ -1,0 +1,5 @@
+Source Code
+function maker(){
+  var ssNew = SpreadsheetApp.create("Finances");
+  Logger.log(ssNew.getUrl());
+}

@@ -1,0 +1,8 @@
+Source Code
+function doGet(e){
+  var output = JSON.stringify({
+    status:'success',
+    data:listEvents()
+  }) 
+  return ContentService.createTextOutput(output).setMimeType(ContentService.MimeType.JSON);
+} 

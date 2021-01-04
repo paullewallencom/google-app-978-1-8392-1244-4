@@ -1,0 +1,7 @@
+Source Code
+function createTrigger(){
+ ScriptApp.newTrigger('addToSheet')
+.timeBased()
+.everyHours(1)
+.create() 
+}

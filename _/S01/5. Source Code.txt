@@ -1,0 +1,5 @@
+Source Code
+function myFunction() {
+  var doc = DocumentApp.create('New Doc just made');
+  Logger.log(doc.getId());
+}

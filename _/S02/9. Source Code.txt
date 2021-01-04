@@ -1,0 +1,7 @@
+Source Code
+function myFunction() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheets()[0];
+  sheet.appendRow(['First','Hello','World']);
+  //Logger.log(ss.getId());
+}

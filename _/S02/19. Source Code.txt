@@ -1,0 +1,22 @@
+Source Code
+function addToSheet(){
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('feed');
+  sheet.clear();
+  sheet.appendRow(['Start','End','Date','Title','Location','Desc','Full']);
+  
+  var startTime = new Date();
+  var endTime = new Date();
+  endTime.setDate(startTime.getDate()+7);
+  
+  var cal = CalendarApp.getDefaultCalendar();
+  var events = cal.getEvents(startTime, endTime);
+ 
+  if(events && events.length > 0 ){
+    for(var x=0;x<events.length;x++){
+      var arr = [Utilities.formatDate(events[x].getStartTime(), Session.getScriptTimeZone(), 'HH:mm'),Utilities.formatDate(events[x].getEndTime(), Session.getScriptTimeZone(), 'HH:mm'),Utilities.formatDate(events[x].getStartTime(), Session.getScriptTimeZone(), 'MMM dd yyyy'),events[x].getTitle(),events[x].getLocation(),events[x].getDescription(),events[x].getId()];
+      Logger.log(arr);
+      sheet.appendRow(arr);
+    }
+  }
+}

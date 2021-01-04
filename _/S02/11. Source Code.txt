@@ -1,0 +1,6 @@
+Source Code
+function addEvent(){
+  var cal = CalendarApp.getDefaultCalendar();
+  var event = cal.createEvent('First Event',new Date('June 20, 2019 20:00:00 UTC'),new Date('June 20, 2019 22:00:00 UTC'));
+  Logger.log('Id'+event.getId());
+}

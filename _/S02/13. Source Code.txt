@@ -1,0 +1,15 @@
+Source Code
+function addEvents(){
+  var cal = CalendarApp.getDefaultCalendar();
+  for(var x=0;x<10;x++){
+    var startTime = randomDate(new Date(),new Date('June 20,2019'));
+    var endTime = new Date(startTime.getTime() + (2*60*60*1000));
+    Logger.log(startTime);
+    Logger.log(endTime);
+    cal.createEvent('New Title '+x, startTime, endTime);
+  }
+}
+ 
+function randomDate(start,end){
+ return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime())); 
+}
